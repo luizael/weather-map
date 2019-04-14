@@ -1,0 +1,24 @@
+table{
+    border-collapse: collapse;
+    width: 50em;
+    border: 1px solid #666;
+}
+thead {
+    background: #ccc url(https://www.devfuria.com.br/html-css/tabelas/bar.gif) repeat-x left center;
+    border-top: 1px solid #a5a5a5;
+    border-bottom: 1px solid #a5a5a5;
+}
+th {
+    font-weight: normal;
+    text-align: left;
+}
+th, td{
+    padding: 0.1em 1em;
+}
+h3{
+    color: darkcyan
+}
+h4{
+    color: rgb(54, 83, 83);
+    font-size: 25px;
+}

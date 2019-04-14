@@ -1,0 +1,81 @@
+<div>
+  <h4>{{polygonSample[0].name}}</h4>
+  <table >
+      <thead>
+      <tr>
+        <th>id do polígono</th>
+        <th>id do usuario</th>
+        <th>área</th>
+        <th>centro</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>{{polygonSample[0].id}}</td>
+          <td>{{polygonSample[0].user_id}}</td>
+          <td>{{polygonSample[0].area}}</td>
+          <td>{{polygonSample[0].center[0]}} ao {{polygonSample[0].center[1]}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Coordenadas da geometria</h4>
+  <table >
+      <thead>
+      <tr>
+        <th>latitude</th>
+        <th>longitude</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cordenada of polygonSample[0].geo_json.geometry.coordinates[0]">
+          <td>{{cordenada[0]}}</td>
+          <td>{{cordenada[1]}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Descrição do clima</h4>
+  <table>
+      <thead>
+      <tr>        
+        <th>id</th>
+        <th>icone</th>
+        <th>principal</th>
+        <th>descrição</th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let clima of consultaClima.weather">
+          <td>{{clima.id}}</td>
+          <td>{{clima.icon}}</td>
+          <td>{{clima.main}}</td>
+          <td>{{clima.description}}</td>         
+      </tr>
+    </tbody>
+  </table>
+  <h4>Clima na cidade agora</h4>
+  <table>
+      <thead>
+      <tr>
+        <th>temperatura</th>
+        <th>pressão</th>
+        <th>humidade</th>
+        <th>temp. mínima</th>
+        <th>temp. máxima</th>
+        <th>vento</th>
+        <th>graus</th>
+        <th>nuvens</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ consultaClima.main.temp }}</td>
+        <td>{{ consultaClima.main.pressure }}</td>
+        <td>{{ consultaClima.main.humidity }}</td>
+        <td>{{ consultaClima.main.temp_min }}</td>
+        <td>{{ consultaClima.main.temp_max }}</td>
+        <td>{{ consultaClima.wind.speed }}</td>
+        <td>{{ consultaClima.wind.deg }}</td>
+        <td>{{ consultaClima.clouds.all }}</td>
+      </tbody>
+  </table>   
+</div>
